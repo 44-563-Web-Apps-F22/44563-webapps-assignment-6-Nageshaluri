@@ -8,8 +8,7 @@
 <body>
     <h2>Musician guess by Nagesh Aluri</h2>
     <form>
-        <label for="musician_name">Enter the secret
-            musician name</label>
+        <label for="musician_name">Enter the secret musician name</label>
         <input type="password" id="musician_name" name="musician_name" value="John Lennon"> <br>
 
         <label for="guess_musician">Guess the musician</label>
@@ -23,19 +22,20 @@
 
     <script>
 
-            let correct = 0;
-            let wrong = 0;
-        function checkGuess() { 
+        let correct = 0;
+        let wrong = 0;
+
+        function checkGuess() {
             console.log("Getting form values")
             name = document.getElementById("musician_name").value
             musician = document.getElementById("guess_musician").value
             out = document.getElementById("result")
-            
+
             if (name == musician) {
                 correct++;
                 alert("You got it right");
                 out.innerHTML = correct;
-                
+
 
             } else {
                 wrong++;
@@ -43,6 +43,31 @@
                 out.innerHTML = wrong;
 
             }
+        }
+    </script>
+
+    <div class="container">
+        <img id="imgs" src="ant_.webp" onclick=swapImage() width="100" height="100">
+    </div>
+
+    <script>
+        let useImage = 1;
+        function swapImage() {
+            switch (useImage) {
+                case 1:
+                    document.getElementById("imgs").src = "imperial.jpg";
+                    useImage = 2
+                    break;
+                case 2:
+                    document.getElementById("imgs").src = "rose-chafer.jpg";
+                    useImage = 3
+                    break;
+                case 3:
+                    document.getElementById("imgs").src = "ant_.webp";
+                    useImage = 1
+                    break;
+            }
+
         }
     </script>
 </body>
