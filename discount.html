@@ -51,16 +51,16 @@
         }
     </script>
     <form>
-        <input type="radio"  id="multiplies" name="operate" value="times" checked>
-        <label for="*">*</label></br>
+        <input type="radio" onclick="chooseOp()" id="multiplies" name="operate" value="times" checked>
+        <label for="multiplies">*</label></br>
 
-        <input type="radio" id="division" name="operate" value="divide">
-        <label for="/">/</label></br>
+        <input type="radio" onclick="chooseOp()" id="division" name="operate" value="divide">
+        <label for="division">/</label></br>
 
-        <input type="radio" id="exponent" name="operate" value="exponent">
-        <label for="**">**</label></br>
+        <input type="radio" onclick="chooseOp()" id="exponent" name="operate" value="exponent">
+        <label for="exponent">**</label></br>
 
-        <input type="button" onclick="chooseOp()" value="Get values from radio group">
+        
 
     </form>
     <p id="operations">This result will be changed as per operation</p>

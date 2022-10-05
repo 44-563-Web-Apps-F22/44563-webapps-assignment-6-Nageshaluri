@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>vacation</title>
+</head>
+<form>
+    <label for="air">Travel by AirFly</label>
+    <input type ="checkbox" id="air" name="air" value=True> <br>
+    <label for="category">Domestic</label>
+    <input type ="checkbox" id="category" name="category" value=True> <br>
+    <label for="Stay">Resort</label>
+    <input type ="checkbox" id="Stay" name="Stay" value=False> <br>
+    <input type="button" onclick="chooseOp()" value="Select a vacation">
+</form>
+<body>
+<h2>selects a vacation Nagesh</h2>
+
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function resolveForm (){
+    console.log("Getting form values")
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+</script>
+
+</body>
+</html> 
