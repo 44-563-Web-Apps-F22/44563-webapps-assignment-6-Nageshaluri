@@ -21,18 +21,17 @@
 
 <script> 
 
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
+let my_vacation = {}
+
+function chooseOp(){
+    my_vacation = {}
+    let aircheck = document.getElementById("air").checked
+    let catcheck = document.getElementById("category").checked
+    let staycheck = document.getElementById("Stay").checked
+    my_vacation = {air:aircheck,category:catcheck,Stay:staycheck}
+
+    document.getElementById("result").innerHTML = JSON.stringify(my_vacation)
+
 }
 </script>
 
