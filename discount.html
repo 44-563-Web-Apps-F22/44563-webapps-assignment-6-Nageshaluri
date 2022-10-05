@@ -29,8 +29,40 @@
             }
             document.getElementById("result").innerHTML = result
         }
+
+        function chooseOp() {
+            let x = document.getElementById("input1").value
+            let y = document.getElementById("input2").value
+            multiplyvalue = document.getElementById("multiplies").checked
+            divisionvalue = document.getElementById("division").checked
+            exponentvalue = document.getElementById("exponent").checked
+            let result = ''
+
+            if (multiplyvalue) {
+                result = x * y 
+            }else if(divisionvalue){
+                result = x / y
+            }
+            else if(exponentvalue){
+                result = x ** y
+            }
+            document.getElementById("operations").innerHTML = result
+
+        }
     </script>
+    <form>
+        <input type="radio"  id="multiplies" name="operate" value="times" checked>
+        <label for="*">*</label></br>
 
+        <input type="radio" id="division" name="operate" value="divide">
+        <label for="/">/</label></br>
+
+        <input type="radio" id="exponent" name="operate" value="exponent">
+        <label for="**">**</label></br>
+
+        <input type="button" onclick="chooseOp()" value="Get values from radio group">
+
+    </form>
+    <p id="operations">This result will be changed as per operation</p>
 </body>
-
 </html>
