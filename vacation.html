@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>vacation</title>
+    <title>Vacation</title>
 </head>
-<form>
-    <label for="air">Travel by AirFly</label>
-    <input type ="checkbox" id="air" name="air" value=True> <br>
-    <label for="category">Domestic</label>
-    <input type ="checkbox" id="category" name="category" value=True> <br>
-    <label for="Stay">Resort</label>
-    <input type ="checkbox" id="Stay" name="Stay" value=False> <br>
-    <input type="button" onclick="chooseOp()" value="Select a vacation">
-</form>
+
 <body>
-<h2>selects a vacation Nagesh</h2>
-
-
-
+    <h2>selects a vacation Nagesh</h2>
+    <form>
+        <label for="air">Travel by AirFly</label>
+        <input type ="checkbox" id="air" name="air" value=True> <br>
+        <label for="domestic">Domestic</label>
+        <input type ="checkbox" id="domestic" name="domestic" value=True> <br>
+        <label for="resort">Resort</label>
+        <input type ="checkbox" id="resort" name="resort" value=False> <br>
+        <input type="button" onclick="chooseOp()" value="Select a vacation">
+    </form>
 <p id="result">This text will be replaced </p>
+<form>
+    <input type="text" id="Name" value=city>
+    <label for="Name">Enter a city</label></br>
+    <input type="text" id="price"> 
+    <label for="price">Enter price</label></br>
+    <input type="button" onclick="updateVacation()" value="Update the vacation">
+</form>
 
 <script> 
 
@@ -26,11 +31,20 @@ let my_vacation = {}
 function chooseOp(){
     my_vacation = {}
     let aircheck = document.getElementById("air").checked
-    let catcheck = document.getElementById("category").checked
-    let staycheck = document.getElementById("Stay").checked
-    my_vacation = {air:aircheck,category:catcheck,Stay:staycheck}
+    let catcheck = document.getElementById("domestic").checked
+    let staycheck = document.getElementById("resort").checked
+    my_vacation = {air:aircheck,domestic:catcheck,resort:staycheck}
 
     document.getElementById("result").innerHTML = JSON.stringify(my_vacation)
+
+}
+
+function updateVacation(){
+    let cityName= document.getElementById("Name").value
+    let priceValue=document.getElementById("price").value
+    my_vacation[cityName]= priceValue
+    document.getElementById("result").innerHTML = JSON.stringify(my_vacation)
+
 
 }
 </script>
