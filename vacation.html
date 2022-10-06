@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <h2>selects a vacation Nagesh</h2>
+    <h2>Nagesh selects a vacation</h2>
     <form>
         <label for="air">Travel by AirFly</label>
         <input type ="checkbox" id="air" name="air" value=True> <br>
@@ -13,7 +13,7 @@
         <input type ="checkbox" id="domestic" name="domestic" value=True> <br>
         <label for="resort">Resort</label>
         <input type ="checkbox" id="resort" name="resort" value=False> <br>
-        <input type="button" onclick="chooseOp()" value="Select a vacation">
+        <input type="button" onclick="selectVacation()" value="Select a vacation">
     </form>
 <p id="result">This text will be replaced </p>
 <form>
@@ -28,7 +28,7 @@
 
 let my_vacation = {}
 
-function chooseOp(){
+function selectVacation(){
     my_vacation = {}
     let aircheck = document.getElementById("air").checked
     let catcheck = document.getElementById("domestic").checked
